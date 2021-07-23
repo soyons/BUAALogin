@@ -1,6 +1,6 @@
 import os
 import time
-from BitSrunLogin.LoginManager import LoginManager
+from BUAASrunLogin.LoginManager import LoginManager
 
 def is_connect_internet(testip):
     status = os.system(u"ping {} -c 8".format(testip))
