@@ -1,0 +1,14 @@
+[Unit]
+Description=BUAA Auto Login Service
+After=network.target
+
+[Service]
+Environment=PYTHONUNBUFFERED=1
+StandardOutput=append:/var/log/buaalogin.log
+Type=simple
+Restart=on-failure
+RestartSec=5s
+ExecStart=/your/path/to/python /your/path/to/BUAALogin/always_online.py
+
+[Install]
+WantedBy=multi-user.target
