@@ -28,3 +28,20 @@ sudo systemctl disable buaalogin.service # 取消开机自启动
 ```
 
 在文件`/var/log/buaalogin.log`中查看运行日志
+
+# Docker 配置
+
+直接在项目根路径下执行下面命令，打包镜像
+```bash
+docker build -t buaalogin:tag .
+```
+
+运行镜像时，添加两个环境变量`USERNAME`与`PASSWORD`即可，例如
+```bash
+docker run -d -e USERNAME="username" -e PASSWORD="password" halfcoke/buaalogin:1
+```
+
+其中`halfcoke/buaalogin:1`是打包好的镜像，可以直接使用
+
+通过`docker logs 容器id`可以查看程序执行日志
+
